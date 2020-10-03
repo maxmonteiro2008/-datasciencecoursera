@@ -246,7 +246,7 @@ The original datasetX(train/test file)and Y(train/test file) had its training an
 
 561- angle(Z,gravityMean)
 
-**|X_Train                                                                    |**
+**|**                             ** X_Train**                              * |**
 | 1             | 2    | 3    |  4   | 5    | 6    | 7    | 6   | ...  | 561  |
 |  :-----:      |:---: |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |-4.6622295e-001|      |      |      |      |      |      |      |      |      |
