@@ -1,4 +1,4 @@
-#Getting and Cleaning Data Course Project#
+<H1>Getting and Cleaning Data Course Project</H1>
 <H2> The code book  </H2>
 
 <h3>The Project</h3>
