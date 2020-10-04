@@ -59,15 +59,15 @@ The original dataset is the typical Machine learning repository.The data is divi
 
 The original datasetX(train/test file)and Y(train/test file) had its training and test data merged into two tables: merged_X and merged_Y.As Train and test have a differen number of rows(obsevations).The data(train/test) was merged horizontally, matching the columns(variables), as ilustraded bellow. For the features (merged_X) this dataset 1 only extracted the measurements on the mean and standard deviation for each observetion. 
 
-**The variable in Y can have the following values** 
+**The variable in Y can have the following values**         
 
-1. WALKING                           
+1. WALKING                                                     
 2. WALKING_UPSTAIRS             
 3. WALKING_DOWNSTAIRS           
 4. SITTING                      
 5. STANDING
 6. LAYING
-
+**MergedY table**
 |Y train |
 |  -----:|
 |  1     |
@@ -76,6 +76,25 @@ The original datasetX(train/test file)and Y(train/test file) had its training an
 |**Y test**  |
 |  1     |
 |    6   |
+
+ **The variable in Subject can have the following values**                        
+1. Subject1             
+2. Subject2           
+4. Subject3                      
+5. Subject4
+6.  Subject5
+(...)
+SubjectN
+
+**MergedSubject table**
+|Subject train |
+|        -----:|
+|  1           |
+|    6         |
+|   4          |
+|**Subject test**  |
+|  1           |
+|    6         |
 
 
 **The variables in X** 
@@ -246,7 +265,8 @@ The original datasetX(train/test file)and Y(train/test file) had its training an
 
 561- angle(Z,gravityMean)
 
-**|**                             ** X_Train**                              * |**
+**MergedX table**
+**|X_Train|**
 | 1             | 2    | 3    |  4   | 5    | 6    | 7    | 6   | ...  | 561  |
 |  :-----:      |:---: |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |-4.6622295e-001|      |      |      |      |      |      |      |      |      |
@@ -262,4 +282,6 @@ The original datasetX(train/test file)and Y(train/test file) had its training an
 |-9.6622295e-001|      |      |      |      |      |      |       |     |      |
 
 
+<H3>The Tidy DataSet 2 </H3>
 
+In this dataset the tables of Dataset1 were merged by its columns into a single big table(Dataset2),and  then reshaped by activity and subject, calculating the mean for the other varibles .
