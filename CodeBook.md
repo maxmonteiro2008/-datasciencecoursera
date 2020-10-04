@@ -288,7 +288,7 @@ SubjectN
 In this dataset the tables of Dataset1 were merged by its columns into a single big table(Dataset2),and  then reshaped by activity and subject, calculating the mean for the other varibles .
 
 
-**Dataset2 befor reshape**                                                                  
+**Dataset2 before reshape**                                                                  
 | Activity |   Subject| 1       |2    | 3    |  4   | 5    | 6    | 7    | 8    | ...  | 561  |
 |  :-----: |  :-----: |:---:    |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:---:|
 
