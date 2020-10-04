@@ -266,6 +266,7 @@ SubjectN
 561- angle(Z,gravityMean)
 
 **MergedX table**
+
 **|X_Train|**
 | 1             | 2    | 3    |  4   | 5    | 6    | 7    | 6   | ...  | 561  |
 |  :-----:      |:---: |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -285,3 +286,9 @@ SubjectN
 <H3>The Tidy DataSet 2 </H3>
 
 In this dataset the tables of Dataset1 were merged by its columns into a single big table(Dataset2),and  then reshaped by activity and subject, calculating the mean for the other varibles .
+
+
+**Dataset2 befor reshape**                                                                  
+| Activity |   Subject| 1       |2    | 3    |  4   | 5    | 6    | 7    | 8    | ...  | 561  |
+|  :-----: |  :-----: |:---:    |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:---:|
+
