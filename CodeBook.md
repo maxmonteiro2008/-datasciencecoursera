@@ -59,34 +59,47 @@ The original dataset is the typical Machine learning repository.The data is divi
 
 The original datasetX(train/test file)and Y(train/test file) had its training and test data merged into two tables: merged_X and merged_Y.As Train and test have a differen number of rows(obsevations).The data(train/test) was merged horizontally, matching the columns(variables), as ilustraded bellow. For the features (merged_X) this dataset 1 only extracted the measurements on the mean and standard deviation for each observetion. 
 
-**The variable in Y can have the following values**         
+**The final values in variable in Y (activity) **         
 
-1. WALKING                                                     
-2. WALKING_UPSTAIRS             
-3. WALKING_DOWNSTAIRS           
-4. SITTING                      
-5. STANDING
-6. LAYING
-**MergedY table**
+WALKING                                                     
+WALKING_UPSTAIRS             
+WALKING_DOWNSTAIRS           
+SITTING                      
+STANDING
+LAYING
+
+
+**Te Merged Y data**
 |Y train |
 |  -----:|
-|  1     |
-|    6   |
-|   4    |
+| WALKING|
+|   LAYING   |
+|   SITTING |
 |**Y test**  |
-|  1     |
-|    6   |
+|  WALKING     |
+|   SITTING   |
 
- **The variable in Subject can have the following values**                        
+**Te final Activity Column into DataSet1**
+|Activity |
+|  -----: |
+| WALKING |
+|LAYING   |
+| SITTING |
+|WALKING  |
+|SITTING  |
+
+ **The values in Subject  set can have the following values**                        
 1. Subject1             
 2. Subject2           
 4. Subject3                      
 5. Subject4
 6.  Subject5
-(...)
-SubjectN
 
-**MergedSubject table**
+(...)
+
+Subject30
+
+**MergedSubject set**
 |Subject train |
 |        -----:|
 |  1           |
@@ -97,198 +110,213 @@ SubjectN
 |    6         |
 
 
-**The variables in X** 
+**Te final Subject Column in DataSet1**
+|Subject  |
+| -----:  |
+|     1   |
+|     21  |
+|       5 |
+|      12 |
+|      9  |
 
-1- tBodyAcc-mean()-X
+**The Final  features variables** 
 
-2- tBodyAcc-mean()-Y
+* timeBodyAccelerometer-mean()-X {unit.:average(m/s2) in x direction at time domain}
 
-3- tBodyAcc-mean()-Z
+* timeBodyAccelerometer-mean()-Y {unit.: average(m/s2) in y directionat time domain}
 
-4- tBodyAcc-std()-X
+* timeBodyAccelerometer-mean()-Z {unit.: average(m/s2) in z direction at time domain}
 
-5- tBodyAcc-std()-Y
+* timeBodyAccelerometer-std()-X {unit.:standard deviation (m/s2) in x direction at time domain}
 
-6- tBodyAcc-std()-Z
+* timeBodyAccelerometer-std()-Y {unit.:standard deviation (m/s2) in y direction at time domain}
 
-41- tGravityAcc-mean()-X
+* timeBodyAccelerometer-std()-Z {unit.:standard deviation (m/s2) in z direction at time domain}
 
-42- tGravityAcc-mean()-Y
+* timeGravityAccelerometer-mean()-X {unit.:average(g) in x direction at time domain}
 
-43- tGravityAcc-mean()-Z
+* timeGravityAccelerometer-mean()-Y {unit.: average(g) in y direction at time domain}
 
-44- tGravityAcc-std()-X
+* timeGravityAccelerometer-mean()-Z {unit.: average(g) in z direction at time domain}
 
-45- tGravityAcc-std()-Y
+* timeGravityAccelerometer-std()-X {unit.:standard deviation (g) in x direction at time domain}
 
-46- tGravityAcc-std()-Z
+* timeGravityAccelerometer-std()-Y {unit.:standard deviation (g) in y direction at time domain}
 
-81- tBodyAccJerk-mean()-X
+* timeGravityAccelerometer-std()-Z {unit.:standard deviation (g) in z direction at time domain}
 
-82- tBodyAccJerk-mean()-Y
+* timeBodyAccelerometerJerk-mean()-X {unit.: average(m/s2) in x direction at time domain (no pre processement}
 
-83- tBodyAccJerk-mean()-Z
+* timeBodyAccelerometerJerk-mean()-Y {unit.: average(m/s2) in y direction at time domain (no pre processement}
 
-84- tBodyAccJerk-std()-X
+*timeBodyAccelerometerJerk-mean()-Z {unit.: average(m/s2) in z direction at time domain (no pre processement}
 
-85- tBodyAccJerk-std()-Y
+*timeBodyAccelerometerJerk-std()-X {unit.: standard deviation(m/s2) in x direction at time domain (no pre processement}
 
-86- tBodyAccJerk-std()-Z
+* timeBodyAccelerometerJerk-std()-Y {unit.: standard deviation(m/s2) in y direction at time domain (no pre processement}
 
-121- tBodyGyro-mean()-X
+* timeBodyAccelerometerJerk-std()-Z {unit.: standard deviation(m/s2) in z direction at time domain (no pre processement}
 
-122- tBodyGyro-mean()-Y
+* timeBodyGyroscope-mean()-X  {unit.:average (rps) in x direction at time domain}
 
-123- tBodyGyro-mean()-Z
 
-124- tBodyGyro-std()-X
+* timeBodyGyroscope-mean()-Y  {unit.:average (rps) in y direction at time domain}
 
-125- tBodyGyro-std()-Y
+* timeBodyGyroscope-mean()-Z {unit.:average (rps) in z direction at time domain}
 
-126- tBodyGyro-std()-Z
+* timeBodyGyroscope-std()-X {unit.:standard deviation (rps) in x direction at time domain}
 
-161- tBodyGyroJerk-mean()-X
+* timeBodyGyroscope-std()-Y  {unit.:standard deviation (rps) in y direction at time domain}
 
-162- tBodyGyroJerk-mean()-Y
+* timeBodyGyroscope-std()-Z   {unit.:standard deviation (rps) in z  direction at time domain}
 
-163- tBodyGyroJerk-mean()-Z
+* timeBodyGyroscopeJerk-mean()-X  {unit.: average(m/s2) in x direction at time domain (no pre processement}
 
-164- tBodyGyroJerk-std()-X
+* timeBodyGyroscopeJerk-mean()-Y   {unit.: average(m/s2) in y direction at time domain (no pre processement}
 
-165- tBodyGyroJerk-std()-Y
+* timeBodyGyroscopeJerk-mean()-Z  {unit.: average(m/s2) in z direction at time domain (no pre processement}
 
-201- tBodyAccMag-mean()
+* timeBodyGyroscopeJerk-std()-X
 
-202- tBodyAccMag-std()
+* timeBodyGyroscopeJerk-std()-Y
 
-214- tGravityAccMag-mean()
+* timeBodyGyroscopeJerk-std()-Z
 
-215- tGravityAccMag-std()
+* timeBodyAccelerometerMagnitude-mean() 
 
-227- tBodyAccJerkMag-mean()
+* timeBodyAccelerometerMagnitude-std()
 
-228- tBodyAccJerkMag-std()
+* timeGravityAccelerometerMagnitude-mean()
 
-240- tBodyGyroMag-mean()
+* timeGravityAccelerometerMagnitude-std()
 
-241- tBodyGyroMag-std()
+* timeBodyAccelerometerJerkMagnitude-mean()
 
-253- tBodyGyroJerkMag-mean()
+* timeBodyAccelerometerJerkMagnitude-std()
 
-254- tBodyGyroJerkMag-std()
+* timeBodyGyroscopeMagnitude-mean()
 
-266- fBodyAcc-mean()-X
+* timeBodyGyroscopeMagnitude-std()
 
-267- fBodyAcc-mean()-Y
+* timeBodyGyroscopeJerkMagnitude-mean()
 
-268- fBodyAcc-mean()-Z
+* timeBodyGyroscopeJerkMagnitude-std()
 
-269- fBodyAcc-std()-X
-270- fBodyAcc-std()-Y
+* frequencyBodyAccelerometer-mean()-X
 
-271- fBodyAcc-std()-Z
+* frequencyBodyAccelerometer-mean()-Y
 
-294- fBodyAcc-meanFreq()-X
-295- fBodyAcc-meanFreq()-Y
+* frequencyBodyAccelerometer-mean()-Z
 
-296- fBodyAcc-meanFreq()-Z
+* frequencyBodyAccelerometer-std()-X
 
-345- fBodyAccJerk-mean()-X
 
-346- fBodyAccJerk-mean()-Y
+* frequencyBodyAccelerometer-std()-Y
 
-347- fBodyAccJerk-mean()-Z
+* frequencyBodyAccelerometer-std()-Z
 
-348- fBodyAccJerk-std()-X
+* frequencyBodyAccelerometer-meanFreq()-X
 
-349- fBodyAccJerk-std()-Y
+* frequencyBodyAccelerometer-meanFreq()-Y
 
-350- fBodyAccJerk-std()-Z
+* frequencyBodyAccelerometer-meanFreq()-Z
 
-373- fBodyAccJerk-meanFreq()-X
+* frequencyBodyAccelerometerJerk-mean()-X
 
-374- fBodyAccJerk-meanFreq()-Y
+* frequencyBodyAccelerometerJerk-mean()-Y
 
-375- fBodyAccJerk-meanFreq()-Z
+* frequencyBodyAccelerometerJerk-mean()-Z
 
-424- fBodyGyro-mean()-X
+* frequencyBodyAccelerometerJerk-std()-X
 
-425- fBodyGyro-mean()-Y
+* frequencyBodyAccelerometerJerk-std()-Y
 
-426- fBodyGyro-mean()-Z
+* frequencyBodyAccelerometerJerk-std()-Z
 
-427- fBodyGyro-std()-X
+* frequencyBodyAccelerometerJerk-meanFreq()-X
 
-428- fBodyGyro-std()-Y
+* frequencyBodyAccelerometerJerk-meanFreq()-Y
 
-429- fBodyGyro-std()-Z
+* frequencyBodyAccelerometerJerk-meanFreq()-Z
 
-452- fBodyGyro-meanFreq()-X
+* frequencyBodyGyroscope-mean()-X
 
-453- fBodyGyro-meanFreq()-Y
+* frequencyBodyGyroscope-mean()-Y
 
-454- fBodyGyro-meanFreq()-Z
+* frequencyBodyGyroscope-mean()-Z
 
-503- fBodyAccMag-mean()
+* frequencyBodyGyroscope-std()-X
 
-504- fBodyAccMag-std()
+* frequencyBodyGyroscope-std()-Y
 
-513- fBodyAccMag-meanFreq()
 
-516 fBodyBodyAccJerkMag-mean()
+* frequencyBodyGyroscope-std()-Z
 
-517- fBodyBodyAccJerkMag-std()
+* frequencyBodyGyroscope-meanFreq()-X
 
-526- fBodyBodyAccJerkMag-meanFreq()
+* frequencyBodyGyroscope-meanFreq()-Y
 
-529- fBodyBodyGyroMag-mean()
+* frequencyBodyGyroscope-meanFreq()-Z
 
-530- fBodyBodyGyroMag-std()
+* frequencyBodyAccelerometerMagnitude-mean()
 
-539- fBodyBodyGyroMag-meanFreq()
+* frequencyBodyAccelerometerMagnitude-std()
 
-542- fBodyBodyGyroJerkMag-mean()
+* frequencyBodyAccelerometerMagnitude-meanFreq()
 
-543- fBodyBodyGyroJerkMag-std()
+* frequencyBodyAccelerometerJerkMagnitude-mean()
 
-552- fBodyBodyGyroJerkMag-meanFreq()
+* frequencyBodyAccelerometerJerkMagnitude-std()
 
-555- angle(tBodyAccMean,gravity)
+* frequencyBodyAccelerometerJerkMagnitude-meanFreq()
 
-556- angle(tBodyAccJerkMean),gravityMean)
+* frequencyBodyGyroscopeMagnitude-mean()
 
-557- angle(tBodyGyroMean,gravityMean)
+* frequencyBodyGyroscopeMagnitude-std()
 
-559- angle(X,gravityMean)
+* frequencyBodyGyroscopeMagnitude-meanFreq() 
 
-560-angle(Y,gravityMean)
+* frequencyBodyGyroscopeJerkMagnitude-mean() 
 
-561- angle(Z,gravityMean)
+* frequencyBodyGyroscopeJerkMagnitude-std() 
 
-**MergedX table**
+* frequencyBodyGyroscopeJerkMagnitude-meanFreq()
 
-**|X_Train|**
-| 1             | 2    | 3    |  4   | 5    | 6    | 7    | 6   | ...  | 561  |
-|  :-----:      |:---: |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|-4.6622295e-001|      |      |      |      |      |      |      |      |      |
-|-8.6622295e-001|      |      |      |      |      |      |      |      |      |
-|-9.6622295e-001|      |      |      |      |      |      |       |     |      |
+* angle(tBodyAccelerometerMean,gravity)
 
+* angle(tBodyAccelerometerJerkMean),gravityMean)
 
-**|X_Test                                                                      |**
-| 1             | 2    | 3    |  4   | 5    | 6    | 7    | 6    | ...  | 561  |
-|  :-----:      |:---: |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|-4.6622295e-001|      |      |      |      |      |      |      |      |      |
-|-8.6622295e-001|      |      |      |      |      |      |      |      |      |
-|-9.6622295e-001|      |      |      |      |      |      |       |     |      |
+* angle(tBodyGyroscopeMean,gravityMean)
+
+* angle(tBodyGyroscopeJerkMean,gravityMean)
+
+* angle(X,gravityMean) angle(Y,gravityMean)
+
+* angle(Z,gravityMean)
+
+
+
+<h4>The  FinalDataSet 1 (after requirements STEP4)</h4> 
+
+
+| Activity | Subject | timeBodyAccelerometer-mean()-X | timeBodyAccelerometer-mean()-Y | timeBodyAccelerometer-mean()-Z | timeBodyAccelerometer-std()-X | timeBodyAccelerometer-std()-Y | ... | angle(Z,gravityMean) |
+|----------|---------|--------------------------------|--------------------------------|--------------------------------|-------------------------------|-------------------------------|-----|----------------------|
+| STANDING | 23      | -0.020294171                   |                                |                                |                               | -0.99093631                   |     | -0.98755418          |
+| SITTING  | 6       | 0.0061008489                   | -0.99093631                    | -0.020294171                   | -0.99093631                   |                               |     |                      |
+| LAYING   | 30      |                                | 0.0061008489                   |                                |                               |                               |     |                      |
+
 
 
 <H3>The Tidy DataSet 2 </H3>
 
-In this dataset the tables of Dataset1 were merged by its columns into a single big table(Dataset2),and  then reshaped by activity and subject, calculating the mean for the other varibles .
+This dataset was obtained from Dataset1, grouping Activity and Subject, and sumarizingthe  average for each X variable.
 
 
-**Dataset2 before reshape**                                                                  
-| Activity |   Subject| 1       |2    | 3    |  4   | 5    | 6    | 7    | 8    | ...  | 561  |
-|  :-----: |  :-----: |:---:    |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:---:|
+**Dataset2 before reshape** 
+
+| Activity | Subject | timeBodyAccelerometer-mean()-X_ mean() | timeBodyAccelerometer-mean()-Y_mean() | timeBodyAccelerometer-mean()-Z_mean() | timeBodyAccelerometer-std()-X_mean() | timeBodyAccelerometer-std()-Y_mean() | ... | angle(Z,gravityMean)_mean() |
+|----------|---------|----------------------------------------|---------------------------------------|---------------------------------------|--------------------------------------|--------------------------------------|-----|-----------------------------|
+| STANDING | 23      | -0.020294171                           |                                       |                                       |                                      | -0.99093631                          |     | -0.98755418                 |
+| SITTING  | 6       | 0.0061008489                           | -0.99093631                           | -0.020294171                          | -0.99093631                          |                                      |     |                             |
+| LAYING   | 30      |                                        | 0.0061008489                          |                                       |                                      |                                      |     |                             |
 
