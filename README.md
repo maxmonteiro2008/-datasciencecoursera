@@ -3,8 +3,9 @@
 
 After you sorce the script, the follow steps will take place:
 
-<h2>1 Original DataSet download the  and the libraries setup </h2>
-
+<h2>1 Original DataSet download and the libraries setup </h2>
+install.packages("dplyr")
+library(dplyr)
 target<- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(target,destfile="./UCI_DataSet.zip",method="curl")
 
@@ -15,6 +16,7 @@ if(!file.exists("./data")){
 }else{unzip(zipfile = "./UCI_DataSet.zip",exdir ="./data" )}
 
 <h2>3 Desired files path_name Mapping </h2>
+Here, each file of interest is mapped to a file variable 
 
 path<-file.path("./data","UCI HAR Dataset")
 #Support files
@@ -35,6 +37,7 @@ Subject_test_file<-file.path(test_path,"subject_test.txt")
 
 
 <h2>4 Desired files Loading as tables </h2>
+NOw that we have the right files mapped , we're going to load the data into tables.
 #support tables
 activitylabels<- read.table(activities_file,header = FALSE)
 featureslabels<- read.table(features_file,header = FALSE)
@@ -49,13 +52,13 @@ test_X_dt<- read.table(X_test_file,header = FALSE)
 test_Y_dt<- read.table(Y_test_file,header = FALSE)
 test_Subject_dt<- read.table(Subject_test_file,header = FALSE)
 
-<h2>5 Execution of Requirements STEP1- Merging </h2>
+<h2>5 Execution of Requirements' STEP1- Merging Train and Test </h2>
 Here, the related  kinds of variables were  merged by row, matching columns. I used rbind() to do this.
 mergedX<-rbind(train_X_dt,test_X_dt)
 mergedY<-rbind(train_Y_dt,test_Y_dt)
 mergedSubject<-rbind(train_Subject_dt,test_Subject_dt)
 
-<h2>6 Execution of Requirements STEP2- Extracting only mean and std variables </h2>
+<h2>6 Execution of Requirements1' STEP2- Extracting only mean and std variables </h2>
 This step cleans all X variables that aren't mean or std.
 
 names(mergedX)<-featureslabels$V2
@@ -63,11 +66,11 @@ keep_vars<-grep("Mean|mean|std|Std",names(mergedX))
 mergedX<-mergedX[,keep_vars]
 
 <h2>7 Execution of Requirements STEP3- giving descriptive activity names to activities </h2>
-This task substitutes  activities number for activities names  in Y tables.
+This task substitutes  activities number for activities names  in merged Ytables.
 
 ''mergedY$V1<-factor(mergedY$V1,activitylabels$V1,labels = activitylabels$V2)
 
-<h2>7 Execution of Requirements STEP4- giving an Appropriately labels the data set with descriptive variable names </h2>
+<h2>7 Execution of Requirements' STEP4- giving an Appropriately labels the data set with descriptive variable names </h2>
 Here  the script change variable names and export the tables of Dataset1
 
 # chaging variable names
@@ -81,6 +84,14 @@ names(mergedY)<-"Activity"
 names(mergedSubject)<-"Subject"
 
 # writting the Tidy  merged  dataset1
-<h2>8 Execution of Requirements STEP5- creates a second, independent tidy data set with the average of each variable for each activity and each subject </h2>
+
+#Merging all variables into One Tidy Dataset 
+
+DataSet1<-cbind(mergedY,mergedSubject,mergedX)
+
+# Exporting the Dataset
+write.table(DataSet1, "./data/Dataset1.txt", row.names = FALSE, quote = FALSE)
+
+<h2>8 Execution of Requirements' STEP5- creates a second, independent tidy data set with the average of each variable for each activity and each subject </h2>
 
 Here  the script merge althe tables by column, reshape by activity+subject(FUN=mean) and export the tables of Dataset2
