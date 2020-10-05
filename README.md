@@ -1,5 +1,6 @@
 <h1> The run_analysis Script</h1>
 
+This is the script which takes the UCI HAR Dataset, and merges  Train an test  Machine learning development data.
 
 After you sorce the script, the follow steps will take place:
 
@@ -12,7 +13,7 @@ library(dplyr)
 target<- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(target,destfile="./UCI_DataSet.zip",method="curl")
 
-<h2>2 The Original DataSet unzip at the right directory</h2>
+<h2>2 The Original DataSet unzip at the approprieted directory</h2>
 
 if(!file.exists("./data")){
   dir.create("./data")
