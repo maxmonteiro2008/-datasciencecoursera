@@ -13,13 +13,17 @@ target<- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20H
 download.file(target,destfile="./UCI_DataSet.zip",method="curl")
 
 <h2>2 The Original DataSet unzip at the right directory</h2>
+
 if(!file.exists("./data")){
   dir.create("./data")
   unzip(zipfile = "./UCI_DataSet.zip",exdir ="./data" )
 }else{unzip(zipfile = "./UCI_DataSet.zip",exdir ="./data" )}
 
+
 <h2>3 Desired files path_name Mapping </h2>
+
 Here, each file of interest is mapped to a file variable 
+
 
 path<-file.path("./data","UCI HAR Dataset")
 #Support files
@@ -40,7 +44,8 @@ Subject_test_file<-file.path(test_path,"subject_test.txt")
 
 
 <h2>4 Desired files Loading as tables </h2>
-NOw that we have the right files mapped , we're going to load the data into tables.
+
+Now that we have the right files mapped out , we're going to load the data into tables.
 #support tables
 activitylabels<- read.table(activities_file,header = FALSE)
 featureslabels<- read.table(features_file,header = FALSE)
