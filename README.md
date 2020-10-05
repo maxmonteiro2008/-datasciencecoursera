@@ -1,6 +1,6 @@
 <h1> The run_analysis Script</h1>
 
-This is the script which takes the UCI HAR Dataset, and merges  Train an test  Machine learning development data.
+This is the script which takes the UCI HAR Dataset, and merges  Train and test  Machine learning development data.
 
 After you sorce the script, the follow steps will take place:
 
